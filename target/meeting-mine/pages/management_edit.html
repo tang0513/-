@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title></title>
+<!-- 最新 Bootstrap 核心 CSS 文件 -->
+<script src="../common/public.js"></script>
+<script type="text/javascript" src="/js/My97DatePicker/WdatePicker.js"></script>  
+<script src="../jsLibrary/common.js"></script>
+<script src="../js/controller/managementController.js"></script>
+<script src="../js/service/managementService.js"></script>
+<script type="text/javascript" src="../js/controller/baseController.js"></script>
+</head>
+<body ng-app="con" ng-controller="managementController" ng-init="findProAll();fix()">
+	<div class="header">
+		<!-- TODO @lutz 页眉 -->
+		<div class="topBar"></div>
+		<div class="mainNav">
+			<div class="container">
+				<nav class="navbar navbar-default">
+					<span class="logo"><img
+						src="../themes/default/images/logo.png" alt="平台logo"
+						onclick="location.href='index.html'"></span>
+					<ul class="nav navbar-nav">
+						<li><a href="../index.html">首页</a></li>
+						<li class="active"><a href="management.html">会议管理</a></li>
+						<li><a href="info_person.html">信息管理</a></li>
+						<li><a href="data_return.html">数据统计</a></li>
+						<li><a href="setup_personal.html">系统设置</a></li>
+					</ul>
+					<div class="textWelc">
+						<span>欢迎，张先生</span><a href="#" class="ml20">退出</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="wrap">
+		<div class="container">
+			<div class="container UCContainer">
+				<div class="row">
+					<div class="col-xs-2 UCMenu">
+						<ul id="sideNav" class="nav nav-pills nav-stacked show-arrows">
+							<li class="hasSub"><a href="#" class="expand"><i
+									class="glyphicon glyphicon-th-list"></i> 会议管理 </a>
+								<ul class="nav sub show" style="display: block;">
+									<li><a href="management.html" class="active"><i
+											class=""></i> 会议管理 </a></li>
+									<li><a href="会议配置.html"><i class=""></i> 会议配置</a></li>
+								</ul></li>
+						</ul>
+					</div>
+					<div class="col-xs-10">
+						<div class="panel panel-default">
+							<!-- Default panel contents -->
+							<div class="panel-heading">新增会议</div>
+							<div class="panel-body">
+								<div class="col-xs-10 addForm">
+									<form class="form-horizontal mb20">
+										<div class="form-group">
+											<label class="col-xs-2 control-label" for=""><s>*</s>会议编号</label>
+											<div class="col-xs-8">
+												<input type="text" class="form-control" id=""
+													ng-model="management.mid" placeholder="会议编号">
+												<p class="help-inline text-muted">请输入会议编号，例1301</p>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-xs-2 control-label" for=""><s>*</s>会议名称</label>
+											<div class="col-xs-8">
+												<input type="text" class="form-control" id=""
+													ng-model="management.mname" placeholder="会议名称">
+												<p class="help-inline text-muted">最多只能输入180个字符</p>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-xs-2 control-label" for=""><s>*</s>会议日期</label>
+											<div class="col-xs-8">
+												<input type="text" class="form-control w3" id=""
+													ng-model="management.startTime" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" onchange="" placeholder="开始日期">
+												<span class="w1 text-center">至</span> <input type="text"
+													class="form-control w3" id=""
+													ng-model="management.endTime" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" onchange="" placeholder="结束日期">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-xs-2 control-label" for=""><s>*</s>会议地址</label>
+											<div class="col-xs-8 form-inline">
+												<select ng-model="management.proid" ng-options="pro.provinceid as pro.province for pro in proList" class="form-control">
+													<option>请选择省份</option>
+												</select> 
+												<select ng-model="management.cityid" ng-options="cities.cityid as cities.city for cities in citiesList" class="form-control">
+													<option>请选择地市</option>
+												</select>
+											</div>
+											<div class="col-xs-8 col-xs-offset-2 mt10">
+												<input type="text" class="form-control" id=""
+													ng-model="management.address" placeholder="地址">
+												<p class="help-inline text-muted">省份、城市和会议地点为必填项</p>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-xs-2 control-label" for=""><s>*</s>会议服务联系人</label>
+											<div class="col-xs-8">
+												<input type="text" class="form-control" id=""
+													ng-model="management.contacts" placeholder="会议服务联系人">
+												<p class="help-inline text-muted">请输入联系人的姓名</p>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-xs-2 control-label" for=""><s>*</s>联系电话</label>
+											<div class="col-xs-8">
+												<label class="radio-inline"> <input type="radio" ng-click="fix()"
+													name="RadioOptions" id="" value="option1" checked>
+													固定电话
+												</label> 
+												<label class="radio-inline"> <input type="radio" ng-click="move()"
+													name="RadioOptions" id="" value="option2"> 手机
+												</label>
+											</div>
+											<div class="col-xs-8 col-xs-offset-2 mt10" ng-if="fixnum==1">
+												<input type="text" class="form-control w2" id="" ng-model="management.firstNum"
+													placeholder="区号"> <span class="w1 text-center">——</span>
+												<input type="text" class="form-control w4" id="" ng-model="management.SecondNum"
+													placeholder="固定电话">
+												<p class="help-inline text-muted">区号最多4位数，号码最多8位数</p>
+											</div>
+											<div class="col-xs-8 col-xs-offset-2 mt10" ng-if="movenum==1">
+												<input type="text" class="form-control" id="" ng-model="management.mphone"
+													placeholder="手机">
+												<p class="help-inline text-muted">请填写真实的手机号码</p>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-xs-2 control-label" for="">会议介绍</label>
+											<div class="col-xs-8">
+												<textarea class="form-control" ng-model="management.content" rows="5"></textarea>
+												<p class="help-inline text-muted">长度不低于2个字符，不多于100个字符</p>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-xs-2 control-label" for="">会议宣传图片</label>
+											<div class="col-xs-8 liulan">
+												<input type="file">
+												<p class="help-inline text-muted">支持JPG、PNG、BMP格式的图片，大小为263*108像素，不大于20k</p>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-xs-offset-2 col-xs-8">
+												<button ng-click="save()" class="btn btn-warning">下一步</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p class="text-center copyright">© 2014 版权所有 软通动力</p>
+	</div>
+</body>
+</html>

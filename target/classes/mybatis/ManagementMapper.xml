@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.txy.meet.mapper.ManagementMapper" >
+  <resultMap id="BaseResultMap" type="com.txy.meet.entity.Management" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="mid" property="mid" jdbcType="INTEGER" />
+    <result column="mname" property="mname" jdbcType="VARCHAR" />
+    <result column="start_time" property="startTime" jdbcType="DATE" />
+    <result column="end_time" property="endTime" jdbcType="DATE" />
+    <result column="mcity" property="mcity" jdbcType="VARCHAR" />
+    <result column="mstates" property="mstates" jdbcType="INTEGER" />
+    <result column="proid" property="proid" jdbcType="INTEGER" />
+    <result column="cityid" property="cityid" jdbcType="INTEGER" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="contacts" property="contacts" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="mphone" property="mphone" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, mid, mname, start_time, end_time, mcity, mstates, proid, cityid, address, contacts, 
+    url, mphone, content
+  </sql>
+  
+  <select id="findByMeeting" resultMap="BaseResultMap" parameterType="com.txy.meet.entity.Management" >
+    select 
+    <include refid="Base_Column_List" />
+    from con_meeting
+   <where>
+   <if test="mid!=null and mid!=''">
+   	mid LIKE CONCAT(CONCAT('%', #{mid}), '%')
+   </if>
+   <if test="mname!=null and mname!=''">
+   	and mname LIKE CONCAT(CONCAT('%', #{mname}), '%')
+   </if>
+   <if test="mstates!=null and mstates!=''">
+   	and mstates LIKE CONCAT(CONCAT('%', #{mstates}), '%')
+   </if>
+   <if test="startTime!=null">
+   	and start_time &gt; #{startTime,jdbcType=DATE}
+   </if>
+   <if test="endTime!=null">
+   	and end_time &lt; #{endTime,jdbcType=DATE}
+   </if>
+   </where>
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from con_meeting
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from con_meeting
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.txy.meet.entity.Management" >
+    insert into con_meeting (id, mid, mname, 
+      start_time, end_time, mcity, 
+      mstates, proid, cityid, 
+      address, contacts, url, 
+      mphone, content)
+    values (#{id,jdbcType=INTEGER}, #{mid,jdbcType=INTEGER}, #{mname,jdbcType=VARCHAR}, 
+      #{startTime,jdbcType=DATE}, #{endTime,jdbcType=DATE}, #{mcity,jdbcType=VARCHAR}, 
+      #{mstates,jdbcType=INTEGER}, #{proid,jdbcType=INTEGER}, #{cityid,jdbcType=INTEGER}, 
+      #{address,jdbcType=VARCHAR}, #{contacts,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{mphone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.txy.meet.entity.Management" >
+    insert into con_meeting
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="mid != null" >
+        mid,
+      </if>
+      <if test="mname != null" >
+        mname,
+      </if>
+      <if test="startTime != null" >
+        start_time,
+      </if>
+      <if test="endTime != null" >
+        end_time,
+      </if>
+      <if test="mcity != null" >
+        mcity,
+      </if>
+      <if test="mstates != null" >
+        mstates,
+      </if>
+      <if test="proid != null" >
+        proid,
+      </if>
+      <if test="cityid != null" >
+        cityid,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="contacts != null" >
+        contacts,
+      </if>
+      <if test="url != null" >
+        url,
+      </if>
+      <if test="mphone != null" >
+        mphone,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="mid != null" >
+        #{mid,jdbcType=INTEGER},
+      </if>
+      <if test="mname != null" >
+        #{mname,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=DATE},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=DATE},
+      </if>
+      <if test="mcity != null" >
+        #{mcity,jdbcType=VARCHAR},
+      </if>
+      <if test="mstates != null" >
+        #{mstates,jdbcType=INTEGER},
+      </if>
+      <if test="proid != null" >
+        #{proid,jdbcType=INTEGER},
+      </if>
+      <if test="cityid != null" >
+        #{cityid,jdbcType=INTEGER},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="contacts != null" >
+        #{contacts,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="mphone != null" >
+        #{mphone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.txy.meet.entity.Management" >
+    update con_meeting
+    <set >
+      <if test="mid != null" >
+        mid = #{mid,jdbcType=INTEGER},
+      </if>
+      <if test="mname != null" >
+        mname = #{mname,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=DATE},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=DATE},
+      </if>
+      <if test="mcity != null" >
+        mcity = #{mcity,jdbcType=VARCHAR},
+      </if>
+      <if test="mstates != null" >
+        mstates = #{mstates,jdbcType=INTEGER},
+      </if>
+      <if test="proid != null" >
+        proid = #{proid,jdbcType=INTEGER},
+      </if>
+      <if test="cityid != null" >
+        cityid = #{cityid,jdbcType=INTEGER},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="contacts != null" >
+        contacts = #{contacts,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="mphone != null" >
+        mphone = #{mphone,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.txy.meet.entity.Management" >
+    update con_meeting
+    set mid = #{mid,jdbcType=INTEGER},
+      mname = #{mname,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=DATE},
+      end_time = #{endTime,jdbcType=DATE},
+      mcity = #{mcity,jdbcType=VARCHAR},
+      mstates = #{mstates,jdbcType=INTEGER},
+      proid = #{proid,jdbcType=INTEGER},
+      cityid = #{cityid,jdbcType=INTEGER},
+      address = #{address,jdbcType=VARCHAR},
+      contacts = #{contacts,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      mphone = #{mphone,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title></title>
+    <!-- 最新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../themes/bootstrap/css/bootstrap.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="../jsLibrary/jquery-1.9.1.min.js"></script>
+
+    <script src="../jsLibrary/common.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!--<script src="../themes/bootstrap/js/bootstrap.min.js"></script>-->
+
+    <!-- TODO @lutz 主页面css文件 -->
+    <link rel="stylesheet" href="../themes/default/main.css">
+
+</head>
+<body>
+<div class="header">
+    <!-- TODO @lutz 页眉 -->
+    <div class="topBar"> </div>
+    <div class="mainNav">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <span class="logo"><img src="../themes/default/images/logo.png" alt="平台logo" onclick="location.href='index.html'"></span>
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="会议管理.html">会议管理</a></li>
+                    <li><a href="info_person.html">信息管理</a></li>
+                    <li class="active"><a href="data_return.html">数据统计</a></li>
+                    <li><a href="setup_personal.html">系统设置</a></li>
+                </ul>
+                <div class="textWelc">
+                    <span>欢迎，张先生</span><a href="#" class="ml20">退出</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="wrap">
+    <div class="container">
+        <div class="container UCContainer">
+            <div class="row">
+                <div class="col-xs-2 UCMenu">
+                    <ul id="sideNav" class="nav nav-pills nav-stacked show-arrows">
+                        <li class="hasSub"><a href="#" class="expand"><i class="glyphicon glyphicon-th-list"></i> 数据统计 </a>
+                            <ul class="nav sub show" style="display: block;">
+                                <li><a href="data_return.html"><i class=""></i> 参会回执统计 </a></li>
+                                <li><a href="data_check.html"><i class=""></i> 会议签到统计</a></li>
+                                <li><a href="data_appdownload.html" class="active"><i class=""></i> APP下载统计</a></li>
+                                <li><a href="data_applogin.html"><i class=""></i> APP登录统计</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-10">
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">APP下载统计</div>
+                        <div class="panel-body">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group col-xs-5">
+                                    <label for="" class="control-label col-xs-4">会议编号</label>
+                                    <div class="col-xs-8">
+                                        <input type="text" class="form-control input-sm" id="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group col-xs-5">
+                                    <label for="" class="control-label col-xs-4">会议名称</label>
+                                    <div class="col-xs-8">
+                                        <input type="text" id="" class="form-control input-sm">
+                                    </div>
+                                </div>
+                                <div class="form-group col-xs-5">
+                                    <label for="" class="control-label col-xs-4">会议日期</label>
+                                    <div class="col-xs-8 pr0">
+                                        <input type="text" class="form-control w4 input-sm" id="" placeholder="">
+                                        <span class="w1 text-center">至</span>
+                                        <input type="text" class="form-control w4 input-sm" id="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group col-xs-5">
+                                    <label for="" class="control-label col-xs-4">&nbsp;</label>
+                                    <div class="col-xs-8">&nbsp;</div>
+                                </div>
+                                <div class="form-group col-xs-2 text-right">
+                                    <button type="submit" class="btn btn-default btn-sm">查询</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Table -->
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th width="60"><input type="checkbox" name="allCheckbox" id="allCheckbox"></th>
+                                    <th width="60">序号</th>
+                                    <th>会议名称</th>
+                                    <th>app下载数量</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" name="checkbox" id="checkbox"></td>
+                                    <td class="text-center">1</td>
+                                    <td><a href="会议基本信息.html">2014年互联网大会</a></td>
+                                    <td class="text-center">30</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" name="checkbox" id="checkbox"></td>
+                                    <td class="text-center">2</td>
+                                    <td>2014年互联网大会</td>
+                                    <td class="text-center">30</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" name="checkbox" id="checkbox"></td>
+                                    <td class="text-center">3</td>
+                                    <td>2014年互联网大会</td>
+                                    <td class="text-center">30</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" name="checkbox" id="checkbox"></td>
+                                    <td class="text-center">4</td>
+                                    <td>2014年互联网大会</td>
+                                    <td class="text-center">30</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><input type="checkbox" name="checkbox" id="checkbox"></td>
+                                    <td class="text-center">5</td>
+                                    <td>2014年互联网大会</td>
+                                    <td class="text-center">30</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="panel-footer clearfix">
+                            <div class="btn-toolbar pull-left">                                
+                                <div class="btn-group btn-group-sm">
+                                    <button type="button" id="export" class="btn btn-default"><i class="icon icon-share-alt"></i> 导出</button>
+                                </div>
+                            </div>
+                            <ul class="pagination pull-right">
+                                <li><a href="#">上一页</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">下一页</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p class="text-center copyright">© 2014 版权所有 软通动力</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.txy.meet.mapper.GuidMapper" >
+  <resultMap id="BaseResultMap" type="com.txy.meet.entity.Guid" >
+    <id column="gid" property="gid" jdbcType="INTEGER" />
+    <result column="mid" property="mid" jdbcType="INTEGER" />
+    <result column="traffic" property="traffic" jdbcType="VARCHAR" />
+    <result column="notes" property="notes" jdbcType="VARCHAR" />
+    <result column="enclosure" property="enclosure" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    gid, mid, traffic, notes, enclosure, url
+  </sql>
+  
+  <select id="findByGuid" resultMap="BaseResultMap" parameterType="com.txy.meet.entity.Guid" >
+    select 
+    <include refid="Base_Column_List" />
+    from con_guid
+    <where>
+    <if test="mid!=null and mid!=''">
+    mid = #{mid,jdbcType=INTEGER}
+    </if>
+    </where>
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from con_guid
+    where gid = #{gid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from con_guid
+    where gid = #{gid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.txy.meet.entity.Guid" >
+    insert into con_guid (gid, mid, traffic, 
+      notes, enclosure, url
+      )
+    values (#{gid,jdbcType=INTEGER}, #{mid,jdbcType=INTEGER}, #{traffic,jdbcType=VARCHAR}, 
+      #{notes,jdbcType=VARCHAR}, #{enclosure,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.txy.meet.entity.Guid" >
+    insert into con_guid
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="gid != null" >
+        gid,
+      </if>
+      <if test="mid != null" >
+        mid,
+      </if>
+      <if test="traffic != null" >
+        traffic,
+      </if>
+      <if test="notes != null" >
+        notes,
+      </if>
+      <if test="enclosure != null" >
+        enclosure,
+      </if>
+      <if test="url != null" >
+        url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="gid != null" >
+        #{gid,jdbcType=INTEGER},
+      </if>
+      <if test="mid != null" >
+        #{mid,jdbcType=INTEGER},
+      </if>
+      <if test="traffic != null" >
+        #{traffic,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null" >
+        #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="enclosure != null" >
+        #{enclosure,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.txy.meet.entity.Guid" >
+    update con_guid
+    <set >
+      <if test="mid != null" >
+        mid = #{mid,jdbcType=INTEGER},
+      </if>
+      <if test="traffic != null" >
+        traffic = #{traffic,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null" >
+        notes = #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="enclosure != null" >
+        enclosure = #{enclosure,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where gid = #{gid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.txy.meet.entity.Guid" >
+    update con_guid
+    set mid = #{mid,jdbcType=INTEGER},
+      traffic = #{traffic,jdbcType=VARCHAR},
+      notes = #{notes,jdbcType=VARCHAR},
+      enclosure = #{enclosure,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR}
+    where gid = #{gid,jdbcType=INTEGER}
+  </update>
+</mapper>

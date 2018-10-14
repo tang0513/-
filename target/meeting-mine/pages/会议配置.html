@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title></title>
+    <!-- 最新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../themes/bootstrap/css/bootstrap.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="../jsLibrary/jquery-1.9.1.min.js"></script>
+
+    <script src="../jsLibrary/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="../jsLibrary/zebra/css/default/zebra_dialog.css">
+    <script src="../jsLibrary/zebra/javascript/zebra_dialog.src.js"></script>
+    <link rel="stylesheet" type="text/css" href="../themes/default/common.css">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!--<script src="../themes/bootstrap/js/bootstrap.min.js"></script>-->
+
+    <!-- TODO @lutz 主页面css文件 -->
+    <link rel="stylesheet" href="../themes/default/main.css">
+
+</head>
+<body>
+<div class="header">
+    <!-- TODO @lutz 页眉 -->
+    <div class="topBar"> </div>
+    <div class="mainNav">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <span class="logo"><img src="../themes/default/images/logo.png" alt="平台logo" onclick="location.href='index.html'"></span>
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html">首页</a></li>
+                    <li class="active"><a href="management.html">会议管理</a></li>
+                    <li><a href="info_person.html">信息管理</a></li>
+                    <li><a href="data_return.html">数据统计</a></li>
+                    <li><a href="setup_personal.html">系统设置</a></li>
+                </ul>
+                <div class="textWelc">
+                    <span>欢迎，张先生</span><a href="#" class="ml20">退出</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="wrap">
+    <div class="container">
+        <div class="container UCContainer">
+            <div class="row">
+                <div class="col-xs-2 UCMenu">
+                    <ul id="sideNav" class="nav nav-pills nav-stacked show-arrows">
+                        <li class="hasSub"><a href="#" class="expand"><i class="glyphicon glyphicon-th-list"></i> 会议管理 </a>
+                            <ul class="nav sub show" style="display: block;">
+                                <li><a href="management.html"><i class=""></i> 会议管理 </a></li>
+                                <li><a href="会议配置.html" class="active"><i class=""></i> 会议配置</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-10">
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">会议模块内容<small>请在您需要配置的内容下面打钩！</small></div>
+                        <div class="panel-body">
+                            <form class="form-horizontal clearfix" role="form">
+                                <div class="form-group col-xs-8">
+                                    <label for="" class="control-label col-xs-2">会议名称</label>
+                                    <div class="col-xs-10">
+                                        <select id="" class="form-control input-sm">
+                                            <option>请选择</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered" id="selectTM">
+                            <thead>
+                            <tr>
+                                <th>基本信息</th>
+                                <th>参会指南</th>
+                                <th>会议资料</th>
+                                <th>会议日程</th>
+                                <th>用餐安排</th>
+                                <th>住宿安排</th>
+                                <th>会议分组</th>
+                                <th>嘉宾信息</th>
+                                <th>周边旅游</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center"><a href="information.html">详情</a></td>
+                                <td class="text-center"><input type="checkbox" name="checkbox" id="select_d1"></td>
+                                <td class="text-center"><input type="checkbox" name="checkbox" id="select_d2"></td>
+                                <td class="text-center"><input type="checkbox" name="checkbox" id="select_d3"></td>
+                                <td class="text-center"><input type="checkbox" name="checkbox" id="select_d4"></td>
+                                <td class="text-center"><input type="checkbox" name="checkbox" id="select_d5"></td>
+                                <td class="text-center"><input type="checkbox" name="checkbox" id="select_d6"></td>
+                                <td class="text-center"><input type="checkbox" name="checkbox" id="select_d7"></td>
+                                <td class="text-center"><input type="checkbox" name="checkbox" id="select_d8"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel panel-default epanel hidden" datainfo="select_d1">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">参会指南</div>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" name="allCheckbox" id="allCheckbox"></th>
+                                <th>议程序号</th>
+                                <th>交通信息</th>
+                                <th>会议须知</th>
+                                <th>须知附件</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center"><input type="checkbox" name="checkbox"></td>
+                                <td class="text-center">1</td>
+                                <td class="">
+                                    北京国际会议中心坐落于北京北四环繁华的亚运村地区，北四环路与京城中轴线交汇处，紧邻国家体育馆鸟巢和水立方。东距首都机场20公里，南离天安门广场9公里，西临颐和园10公里，北往八达岭长城80公里，与奥运村咫尺相临。
+                                </td>
+                                <td class="">
+                                    1、请根据会议日程安排，提前10分钟进入会场，并关闭通讯工具，以保持会场秩序。
+                                    2、参会期间请注意人身、财务等的安全，如有异常或需求请及时联系会务组。会务组设在1255房间，联系人：原楠，联系电话：13683382166。
+                                    3、因天气寒冷，进出酒店请注意及时增减衣服，以防感冒，如感身体不适，请及时联系医务室。医务室设在1252 房间，内部电话直接拨打：1252。
+                                    4、如需预订返程机票、火车票，报到后请及时联系会务组。
+                                </td>
+                                <td class="text-center"><a href="#">会议须知详细资料.doc</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="panel-footer clearfix">
+                            <div class="btn-toolbar pull-left">
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="select_d1_add" href="#" class="btn btn-default"><span class="icon icon-plus-sign"></span> 新增</a>
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon icon-edit"></span> 编辑</a>
+                                    <button type="button" class="btn btn-default"><span class="icon icon-trash"></span> 删除</button>
+                                </div>
+                            </div>
+                            <ul class="pagination pull-right">
+                                <li><a href="#">上一页</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">下一页</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default epanel hidden" datainfo="select_d2">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">会议资料</div>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" name="allCheckbox" id="allCheckbox"></th>
+                                <th>议程序号</th>
+                                <th>文件名称</th>
+                                <th>资料备注</th>
+                                <th>是否提供下载</th>
+                                <th>资料附件</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center"><input type="checkbox" name="checkbox"></td>
+                                <td class="text-center">1</td>
+                                <td class="">互联网技术大讲堂</td>
+                                <td class=""></td>
+                                <td class="text-center">是</td>
+                                <td class="text-center"><a href="#">会议须知详细资料.doc</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="panel-footer clearfix">
+                            <div class="btn-toolbar pull-left">
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="select_d2_add" href="#" class="btn btn-default"><span class="icon icon-plus-sign"></span> 新增</a>
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon icon-edit"></span> 编辑</a>
+                                    <button type="button" class="btn btn-default"><span class="icon icon-trash"></span> 删除</button>
+                                </div>
+                            </div>
+                            <ul class="pagination pull-right">
+                                <li><a href="#">上一页</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">下一页</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default epanel hidden" datainfo="select_d3">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">会议日程</div>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" name="allCheckbox" id="allCheckbox"></th>
+                                <th>议程序号</th>
+                                <th>议程议题</th>
+                                <th>演讲人</th>
+                                <th>开始时间</th>
+                                <th>结束时间</th>
+                                <th>演讲内容</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center"><input type="checkbox" name="checkbox"></td>
+                                <td class="text-center">1</td>
+                                <td class="">中国互联网未来发展方向</td>
+                                <td class="">李彦宏</td>
+                                <td class="">2014-11-20 10:00</td>
+                                <td class="">2014-11-20 10:20</td>
+                                <td class="text-center">1、百度公司面临新机遇的挑战；2、百度未来的发展方向；3、百度未来的运营模式</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="panel-footer clearfix">
+                            <div class="btn-toolbar pull-left">
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="select_d3_add" href="#" class="btn btn-default"><span class="icon icon-plus-sign"></span> 新增</a>
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon icon-edit"></span> 编辑</a>
+                                    <button type="button" class="btn btn-default"><span class="icon icon-trash"></span> 删除</button>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon "></span> 模板下载</a>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon "></span> 导入文件</a>
+                                </div>
+                            </div>
+                            <ul class="pagination pull-right">
+                                <li><a href="#">上一页</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">下一页</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default epanel hidden" datainfo="select_d4">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">用餐安排</div>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" name="allCheckbox" id="allCheckbox"></th>
+                                <th>议程序号</th>
+                                <th>用餐名称</th>
+                                <th>开始时间</th>
+                                <th>结束时间</th>
+                                <th>用餐形式</th>
+                                <th>用餐地点</th>
+                                <th>菜单</th>
+                                <th>座位图</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center"><input type="checkbox" name="checkbox"></td>
+                                <td class="text-center">1</td>
+                                <td class="">午餐</td>
+                                <td class="">2014-11-20 12:00</td>
+                                <td class="">2014-11-20 13:00</td>
+                                <td class="">统一用餐</td>
+                                <td class="">燕山大酒店一层餐厅</td>
+                                <td class="">宫保鸡丁、鱼香肉丝、酸菜鱼</td>
+                                <td class="text-center"><a href="#">座位图</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="panel-footer clearfix">
+                            <div class="btn-toolbar pull-left">
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="" href="会议配置_用餐安排.html" class="btn btn-default"><span class="icon icon-plus-sign"></span> 新增</a>
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon icon-edit"></span> 编辑</a>
+                                    <button type="button" class="btn btn-default"><span class="icon icon-trash"></span> 删除</button>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon "></span> 模板下载</a>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon "></span> 导入文件</a>
+                                </div>
+                            </div>
+                            <ul class="pagination pull-right">
+                                <li><a href="#">上一页</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">下一页</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default epanel hidden" datainfo="select_d5">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">住宿安排</div>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" name="allCheckbox" id="allCheckbox"></th>
+                                <th>议程序号</th>
+                                <th>住宿安排</th>
+                                <th>酒店名称</th>
+                                <th>酒店地址</th>
+                                <th>联系方式</th>
+                                <th>入住时间</th>
+                                <th>备注</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center"><input type="checkbox" name="checkbox"></td>
+                                <td class="text-center">1</td>
+                                <td class="">统一安排</td>
+                                <td class="">汉庭酒店</td>
+                                <td class="">北京海淀区中关村大街49号</td>
+                                <td class="">010-62632036</td>
+                                <td class="">2014-11-20</td>
+                                <td class="">离开房间，请检查好自己的随身物品</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="panel-footer clearfix">
+                            <div class="btn-toolbar pull-left">
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="" href="会议配置_住宿安排.html" class="btn btn-default"><span class="icon icon-plus-sign"></span> 新增</a>
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon icon-edit"></span> 编辑</a>
+                                    <button type="button" class="btn btn-default"><span class="icon icon-trash"></span> 删除</button>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon "></span> 模板下载</a>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon "></span> 导入文件</a>
+                                </div>
+                            </div>
+                            <ul class="pagination pull-right">
+                                <li><a href="#">上一页</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">下一页</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default epanel hidden" datainfo="select_d6">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">会议分组</div>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" name="allCheckbox" id="allCheckbox"></th>
+                                <th>议程序号</th>
+                                <th>分组名称</th>
+                                <th>负责人</th>
+                                <th>联系电话</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center"><input type="checkbox" name="checkbox"></td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">商务组</td>
+                                <td class="text-center">李彦宏</td>
+                                <td class="text-center">13812345678</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="panel-footer clearfix">
+                            <div class="btn-toolbar pull-left">
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="select_d6_add" href="#" class="btn btn-default"><span class="icon icon-plus-sign"></span> 新增</a>
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon icon-edit"></span> 编辑</a>
+                                    <button type="button" class="btn btn-default"><span class="icon icon-trash"></span> 删除</button>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon "></span> 模板下载</a>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon "></span> 导入文件</a>
+                                </div>
+                            </div>
+                            <ul class="pagination pull-right">
+                                <li><a href="#">上一页</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">下一页</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default epanel hidden" datainfo="select_d7">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">嘉宾信息</div>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" name="allCheckbox" id="allCheckbox"></th>
+                                <th>议程序号</th>
+                                <th>姓名</th>
+                                <th>手机号</th>
+                                <th>分组</th>
+                                <th>邮箱</th>
+                                <th>单位</th>
+                                <th>部门</th>
+                                <th>职务</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center"><input type="checkbox" name="checkbox"></td>
+                                <td class="text-center">1</td>
+                                <td class="text-center">李彦宏</td>
+                                <td class="text-center">13812345678</td>
+                                <td class="text-center">商务组</td>
+                                <td class="text-center">lyh@baidu.com</td>
+                                <td class="text-center">百度公司</td>
+                                <td class="text-center"></td>
+                                <td class="text-center">CEO</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="panel-footer clearfix">
+                            <div class="btn-toolbar pull-left">
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="select_d7_add" href="#" class="btn btn-default"><span class="icon icon-plus-sign"></span> 新增</a>
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon icon-edit"></span> 编辑</a>
+                                    <button type="button" class="btn btn-default"><span class="icon icon-trash"></span> 删除</button>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon "></span> 模板下载</a>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon "></span> 导入文件</a>
+                                </div>
+                            </div>
+                            <ul class="pagination pull-right">
+                                <li><a href="#">上一页</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">下一页</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default epanel hidden" datainfo="select_d8">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">周边旅游</div>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" name="allCheckbox" id="allCheckbox"></th>
+                                <th>议程序号</th>
+                                <th>旅游日数</th>
+                                <th>方案1图片</th>
+                                <th>方案1</th>
+                                <th>方案2图片</th>
+                                <th>方案2</th>
+                                <th>方案3图片</th>
+                                <th>方案3</th>
+                                <th>方案4图片</th>
+                                <th>方案4</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center"><input type="checkbox" name="checkbox"></td>
+                                <td class="text-center">1</td>
+                                <td class="">一日游</td>
+                                <td class="">天安门看升旗,人民大会堂、人民英雄纪念碑、国家大剧院、前门(正阳门)、中南海</td>
+                                <td class=""></td>
+                                <td class="">天安门看升旗,人民大会堂、人民英雄纪念碑、国家大剧院、前门(正阳门)、中南海</td>
+                                <td class=""></td>
+                                <td class=""></td>
+                                <td class=""></td>
+                                <td class=""></td>
+                                <td class=""></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="panel-footer clearfix">
+                            <div class="btn-toolbar pull-left">
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="" href="会议配置_周边旅游.html" class="btn btn-default"><span class="icon icon-plus-sign"></span> 新增</a>
+                                    <a type="button" id="" href="#" class="btn btn-default"><span class="icon icon-edit"></span> 编辑</a>
+                                    <button type="button" class="btn btn-default"><span class="icon icon-trash"></span> 删除</button>
+                                </div>
+                            </div>
+                            <ul class="pagination pull-right">
+                                <li><a href="#">上一页</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">下一页</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p class="text-center copyright">© 2014 版权所有 软通动力</p>
+</div>
+
+<!---->
+<div id="select_d1_addBox" class="hidden">
+    <form class="form-horizontal addForm" role="form">
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">交通信息</label>
+            <div class="col-xs-6">
+                <textarea class="form-control input-sm" rows="5" id="" placeholder="请输入交通信息"></textarea>
+                <p class="help-inline text-muted">长度不低于2个字符，不多于100个字符</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">会议须知</label>
+            <div class="col-xs-6">
+                <textarea class="form-control input-sm" rows="5" id="" placeholder="请输入会议须知"></textarea>
+                <p class="help-inline text-muted">长度不低于2个字符，不多于100个字符</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2 control-label" for="">会议须知上传</label>
+            <div class="col-xs-6 liulan">
+                <input type="file">
+                <p class="help-inline text-muted">暂时只支持上传docx、pdf、ppt和doc格式文档</p>
+            </div>
+        </div>
+    </form>
+</div>
+<div id="select_d2_addBox" class="hidden">
+    <form class="form-horizontal addForm" role="form">
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">文件名称</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="文件名称">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">资料备注</label>
+            <div class="col-xs-6">
+                <textarea class="form-control input-sm" rows="5" id="" placeholder="请输入资料备注"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">是否提供下载</label>
+            <div class="col-xs-6">
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="" value="" checked> 是
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="" value=""> 否
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2 control-label" for="">会议资料上传</label>
+            <div class="col-xs-6 liulan
+            ">
+                <input type="file">
+                <p class="help-inline text-muted">暂时只支持上传docx、pdf、ppt和doc格式文档</p>
+            </div>
+        </div>
+    </form>
+</div>
+<div id="select_d3_addBox" class="hidden">
+    <form class="form-horizontal addForm" role="form">
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">议程议题</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="议程议题">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">演讲人</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="演讲人">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">开始时间</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="开始时间">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">结束时间</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="结束时间">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">演讲内容</label>
+            <div class="col-xs-6">
+                <textarea class="form-control input-sm" rows="5" id="" placeholder="请输入演讲内容"></textarea>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div id="select_d6_addBox" class="hidden">
+    <form class="form-horizontal addForm" role="form">
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">分组名称</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="分组名称">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">负责人</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="负责人">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">联系电话</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="联系电话">
+            </div>
+        </div>
+    </form>
+</div>
+<div id="select_d7_addBox" class="hidden">
+    <form class="form-horizontal addForm" role="form">
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">会议分组</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="文件名称">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">姓名</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="姓名">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">手机号</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="手机号">
+                <p class="help-inline text-muted">号码最少11位，最多11位数</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">是否隐藏手机号</label>
+            <div class="col-xs-6">
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="" value=""> 是
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="" value=""> 否
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">性别</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="姓名">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">邮箱</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="邮箱">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">单位</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="单位">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">部门</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="部门">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">职务</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control input-sm" id="" placeholder="职务">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-xs-2 control-label">是否可查看所有参会人员手机号</label>
+            <div class="col-xs-6">
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="" value=""> 是
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="" value=""> 否
+                </label>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    $(function(){
+        $("#selectTM").find("input:checkbox").click(function(){
+            if( $(this)[0].checked ){
+                var $tmp=$(this).attr("id");
+                $("div[datainfo]").addClass("hidden");
+                $("[datainfo="+$tmp+"]").removeClass("hidden");
+
+            }
+            else
+            {
+                $("div[datainfo]").addClass("hidden");
+                var $tmpB=$("#selectTM").find("input[type='checkbox']:checked").attr("id");
+                $("[datainfo="+$tmpB+"]").removeClass("hidden");
+            }
+        });
+
+        $("#select_d1_add").bind("click",function(e){
+            e.preventDefault();
+            var zDialog= new $.Zebra_Dialog('', {
+                'source': {'inline': $('#select_d1_addBox').html()},
+                'width': 850,
+                'type':false,
+                'overlay_close':false,
+                'overlay_opacity':0.75,
+                'title':  '参会指南新增',
+                'buttons':  [
+                                {caption: '保存',claName:'primary', callback: function() { }},
+                                {caption: '返回',claName:'default', callback: function() { }}
+                            ]
+
+            });
+        })
+        $("#select_d2_add").bind("click",function(e){
+            e.preventDefault();
+            var zDialog= new $.Zebra_Dialog('', {
+                'source': {'inline': $('#select_d2_addBox').html()},
+                'width': 850,
+                'type':false,
+                'overlay_close':false,
+                'overlay_opacity':0.75,
+                'title':  '会议资料上传',
+                'buttons':  [
+                                {caption: '保存',claName:'primary', callback: function() { }},
+                                {caption: '返回',claName:'default', callback: function() { }}
+                            ]
+
+            });
+        })
+        $("#select_d3_add").bind("click",function(e){
+            e.preventDefault();
+            var zDialog= new $.Zebra_Dialog('', {
+                'source': {'inline': $('#select_d3_addBox').html()},
+                'width': 850,
+                'type':false,
+                'overlay_close':false,
+                'overlay_opacity':0.75,
+                'title':  '会议日程新增',
+                'buttons':  [
+                                {caption: '保存',claName:'primary', callback: function() { }},
+                                {caption: '返回',claName:'default', callback: function() { }}
+                            ]
+
+            });
+        })
+        $("#select_d6_add").bind("click",function(e){
+            e.preventDefault();
+            var zDialog= new $.Zebra_Dialog('', {
+                'source': {'inline': $('#select_d6_addBox').html()},
+                'width': 850,
+                'type':false,
+                'overlay_close':false,
+                'overlay_opacity':0.75,
+                'title':  '会议分组新增',
+                'buttons':  [
+                                {caption: '保存',claName:'primary', callback: function() { }},
+                                {caption: '返回',claName:'default', callback: function() { }}
+                            ]
+
+            });
+        })
+        $("#select_d7_add").bind("click",function(e){
+            e.preventDefault();
+            var zDialog= new $.Zebra_Dialog('', {
+                'source': {'inline': $('#select_d7_addBox').html()},
+                'width': 850,
+                'type':false,
+                'overlay_close':false,
+                'overlay_opacity':0.75,
+                'title':  '嘉宾信息新增',
+                'buttons':  [
+                                {caption: '保存',claName:'primary', callback: function() { }},
+                                {caption: '返回',claName:'default', callback: function() { }}
+                            ]
+
+            });
+        })
+
+    })
+</script>
+</body>
+</html>

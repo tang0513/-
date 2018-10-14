@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.txy.meet.mapper.ScheduleMapper" >
+  <resultMap id="BaseResultMap" type="com.txy.meet.entity.Schedule" >
+    <id column="sid" property="sid" jdbcType="INTEGER" />
+    <result column="mid" property="mid" jdbcType="INTEGER" />
+    <result column="agenda" property="agenda" jdbcType="VARCHAR" />
+    <result column="speaker" property="speaker" jdbcType="VARCHAR" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    sid, mid, agenda, speaker, start_time, end_time, content
+  </sql>
+  
+  <select id="findBySche" resultMap="BaseResultMap" parameterType="com.txy.meet.entity.Schedule" >
+    select 
+    <include refid="Base_Column_List" />
+    from con_schedule
+    <where>
+    <if test="mid!=null and mid!=''">
+    mid = #{mid}
+    </if>
+    </where>
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from con_schedule
+    where sid = #{sid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from con_schedule
+    where sid = #{sid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.txy.meet.entity.Schedule" >
+    insert into con_schedule (sid, mid, agenda, 
+      speaker, start_time, end_time, 
+      content)
+    values (#{sid,jdbcType=INTEGER}, #{mid,jdbcType=INTEGER}, #{agenda,jdbcType=VARCHAR}, 
+      #{speaker,jdbcType=VARCHAR}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, 
+      #{content,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.txy.meet.entity.Schedule" >
+    insert into con_schedule
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sid != null" >
+        sid,
+      </if>
+      <if test="mid != null" >
+        mid,
+      </if>
+      <if test="agenda != null" >
+        agenda,
+      </if>
+      <if test="speaker != null" >
+        speaker,
+      </if>
+      <if test="startTime != null" >
+        start_time,
+      </if>
+      <if test="endTime != null" >
+        end_time,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sid != null" >
+        #{sid,jdbcType=INTEGER},
+      </if>
+      <if test="mid != null" >
+        #{mid,jdbcType=INTEGER},
+      </if>
+      <if test="agenda != null" >
+        #{agenda,jdbcType=VARCHAR},
+      </if>
+      <if test="speaker != null" >
+        #{speaker,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.txy.meet.entity.Schedule" >
+    update con_schedule
+    <set >
+      <if test="mid != null" >
+        mid = #{mid,jdbcType=INTEGER},
+      </if>
+      <if test="agenda != null" >
+        agenda = #{agenda,jdbcType=VARCHAR},
+      </if>
+      <if test="speaker != null" >
+        speaker = #{speaker,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where sid = #{sid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.txy.meet.entity.Schedule" >
+    update con_schedule
+    set mid = #{mid,jdbcType=INTEGER},
+      agenda = #{agenda,jdbcType=VARCHAR},
+      speaker = #{speaker,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      content = #{content,jdbcType=VARCHAR}
+    where sid = #{sid,jdbcType=INTEGER}
+  </update>
+</mapper>

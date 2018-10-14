@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title></title>
+<!-- 最新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="../themes/bootstrap/css/bootstrap.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="../jsLibrary/jquery-1.9.1.min.js"></script>
+<script src="../jsLibrary/common.js"></script>
+<link rel="stylesheet" type="text/css" href="../jsLibrary/zebra/css/default/zebra_dialog.css">
+<script src="../jsLibrary/zebra/javascript/zebra_dialog.src.js"></script>
+<link rel="stylesheet" type="text/css" href="../themes/default/common.css">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<!--<script src="../themes/bootstrap/js/bootstrap.min.js"></script>-->
+
+<!-- TODO @lutz 主页面css文件 -->
+<link rel="stylesheet" href="../themes/default/main.css">
+</head>
+<body>
+<div class="header"> 
+  <!-- TODO @lutz 页眉 -->
+  <div class="topBar"> </div>
+  <div class="mainNav">
+    <div class="container">
+      <nav class="navbar navbar-default"> <span class="logo"><img src="../themes/default/images/logo.png" alt="平台logo" onclick="location.href='index.html'"></span>
+        <ul class="nav navbar-nav">
+          <li><a href="../index.html">首页</a></li>
+          <li class="active"><a href="会议管理.html">会议管理</a></li>
+          <li><a href="info_person.html">信息管理</a></li>
+          <li><a href="data_return.html">数据统计</a></li>
+          <li><a href="setup_personal.html">系统设置</a></li>
+        </ul>
+        <div class="textWelc"> <span>欢迎，张先生</span><a href="#" class="ml20">退出</a> </div>
+      </nav>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+  <div class="container">
+    <div class="container UCContainer">
+      <div class="row">
+        <div class="col-xs-2 UCMenu">
+          <ul id="sideNav" class="nav nav-pills nav-stacked show-arrows">
+            <li class="hasSub"><a href="#" class="expand"><i class="glyphicon glyphicon-th-list"></i> 信息管理 </a>
+              <ul class="nav sub show" style="display: block;">
+                <li><a href="info_person.html"><i class=""></i> 人员信息 </a></li>
+                <li><a href="info_vote.html" class="active"><i class=""></i> 投票信息</a></li>
+                <li><a href="info_notice.html"><i class=""></i> 消息通知</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-10">
+          <div class="panel panel-default"> 
+            <!-- Default panel contents -->
+            <div class="panel-heading">编辑投票信息</div>
+            <div class="panel-body">
+              <div class="col-xs-10 addForm">
+                <form class="form-horizontal mb20">
+                  <div class="form-group">
+                    <label class="col-xs-2 control-label" for="">会议名称</label>
+                    <div class="col-xs-8">
+                      <select id="" class="form-control input-sm">
+                        <option>请选择</option>
+                        <option>互联网大会</option>
+                        <option>IT两会</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-xs-2 control-label" for=""><s>*</s>投票主题</label>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" id="" placeholder="投票主题">
+                      <p class="help-inline text-muted">长度最多是50个字符</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-xs-2 control-label" for=""><s>*</s>投票类型</label>
+                    <div class="col-xs-8">
+                      <label class="radio-inline">
+                        <input type="radio" name="RadioOptions" id="" value="option1" checked>
+                        投票为单选 </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="RadioOptions" id="" value="option2">
+                        投票为多选 </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-xs-2 control-label" for=""><s>*</s>投票截止时间</label>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" id="" placeholder="投票截止时间">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-xs-2 control-label" for=""><s>*</s>选项设置</label>
+                    <div class="col-xs-8">
+                      <p class="help-line text-muted">（最多为6个选项）</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-xs-2 control-label" for=""><s>*</s>选项一</label>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" id="" placeholder="选项一">
+                      <p class="help-inline text-muted">长度最多是10个字符</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-xs-2 control-label" for=""><s>*</s>选项二</label>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" id="" placeholder="选项二">
+                      <p class="help-inline text-muted">长度最多是10个字符</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-xs-2 control-label" for="">选项三</label>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" id="" placeholder="选项三">
+                      <p class="help-inline"><a href="#">删除</a></p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-xs-2 control-label" for="">&nbsp;</label>
+                    <div class="col-xs-8">
+                      <button type="button" id="edit" class="btn btn-default"> 添加选项</button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-xs-offset-2 col-xs-2">
+                      <button type="button" class="btn btn-warning">确定</button>
+                    </div>
+                    <div class="col-xs-offset-2">
+                      <button type="button" class="btn btn-warning">取消</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div id="rrrr" class="hidden">
+<form class="row" role="form">
+<div class="form-group col-md-12">
+  <label for="aTtemplet">选项序号</label>
+  <input type="name" class="form-control" id="name" placeholder="请输入选项序号">
+  </input>
+</div>
+<div class="form-group col-md-12">
+  <label for="aTtemplet">选项内容</label>
+  <input type="name" class="form-control" id="name" placeholder="请输入选项内容">
+  </input>
+</div>
+</form></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <p class="text-center copyright">© 2014 版权所有 软通动力</p>
+</div>
+<script>
+$(document).ready(function(){
+    $("#edit").bind("click",function(e){
+        e.preventDefault();
+        var zDialog= new $.Zebra_Dialog('', {
+            'source': {'inline': $('#rrrr').html()},
+            'width': 400,
+            'type':false,
+            'overlay_close':false,
+            'overlay_opacity':0.75,
+            'title':  '添加选项',
+            'buttons':  [
+                            {caption: '保存',claName:'primary', callback: function() { }},
+                            {caption: '返回',claName:'default', callback: function() { }}
+                        ]
+        });
+    })
+})
+</script>
+</body>
+</html>

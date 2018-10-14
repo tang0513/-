@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title></title>
+    <!-- 最新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="themes/bootstrap/css/bootstrap.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="jsLibrary/jquery-1.9.1.min.js"></script>
+
+    <script src="jsLibrary/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="jsLibrary/zebra/css/default/zebra_dialog.css">
+<script src="jsLibrary/zebra/javascript/zebra_dialog.src.js"></script>
+<link rel="stylesheet" type="text/css" href="themes/default/common.css">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!--<script src="themes/bootstrap/js/bootstrap.min.js"></script>-->
+
+    <!-- TODO @lutz 主页面css文件 -->
+    <link rel="stylesheet" href="themes/default/main.css">
+
+</head>
+<body>
+<div class="header">
+    <!-- TODO @lutz 页眉 -->
+    <div class="topBar"> </div>
+    <div class="mainNav">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <span class="logo"><img src="themes/default/images/logo.png" alt="平台logo" onclick="location.href='index.html'"></span>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">首页</a></li>
+                    <li><a href="pages/management.html">会议管理</a></li>
+                    <li><a href="pages/info_person.html">信息管理</a></li>
+                    <li><a href="pages/data_return.html">数据统计</a></li>
+                    <li><a href="pages/setup_personal.html">系统设置</a></li>
+                </ul>
+                <div class="textWelc">
+                    <span>欢迎，张先生</span><a href="#" class="ml20">退出</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="wrap">
+    <div class="container">
+        <div class="container UCContainer">
+            <div class="row">
+                <div class="col-xs-3 userInfo">
+                    <div class="media">
+                        <span class="media-left ph">
+                            <img src="themes/default/images/ph.png" alt="用户头像">
+                            <p class="editPh"><a href="#">修改头像</a></p>
+                        </span>
+                        <div class="media-body">
+                            <h4 class="media-heading pl10">张先生</h4>
+                            <ul>
+                                <li><a href="#" class="btn btn-link btn-sm" id="nc">修改昵称</a></li>
+                                <li><a href="index_personal.html" class="btn btn-link btn-sm">查看个人资料</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <dl class="clearfix mt20">
+                        <dt class="pull-left">最后一次登录：</dt>
+                        <dd class="pull-right">2014年11月12日　10:10:10</dd>
+                    </dl>
+                    <div class="mt10">
+                        <i class="glyphicon glyphicon-map-marker"></i> 河北省　廊坊市
+                    </div>
+                    <hr>
+                    <dl class="clearfix mt20 userMessage">
+                        <dt class="">所有会议：</dt>
+                        <dd class="clearfix"><i class="glyphicon glyphicon-adjust"></i> 未发布会议 <span class="pull-right"><a href="index_pulic.html" class="">10</a>个</span></dd>
+                        <dd class="clearfix"><i class="glyphicon glyphicon-adjust"></i> 已发布会议 <span class="pull-right"><a href="#" class="">10</a>个</span></dd>
+                        <dd class="clearfix"><i class="glyphicon glyphicon-adjust"></i> 已结束会议 <span class="pull-right"><a href="#" class="">10</a>个</span></dd>
+                    </dl>
+                </div>
+                <div id="rrrr" class="hidden">
+<form class="row" role="form">
+<div class="form-group col-md-12">
+  <label for="aTtemplet">昵称是您的个性身份展示，不用来登录</label>
+  <input type="name" class="form-control" id="name" placeholder="请输入您的昵称">
+  </input>
+</div>
+</form></div>
+                <div class="col-xs-9 UCContent">
+                    <!--欢迎图-->
+                    <img src="themes/default/images/banner.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p class="text-center copyright">© 2014 版权所有 软通动力</p>
+</div>
+</body>
+<script>
+$(document).ready(function(){
+    $("#nc").bind("click",function(e){
+        e.preventDefault();
+        var zDialog= new $.Zebra_Dialog('', {
+            'source': {'inline': $('#rrrr').html()},
+            'width': 400,
+            'type':false,
+            'overlay_close':false,
+            'overlay_opacity':0.75,
+            'title':  '设置昵称',
+            'buttons':  [
+                            {caption: '保存',claName:'primary', callback: function() { }},
+                            {caption: '返回',claName:'default', callback: function() { }}
+                        ]
+        });
+    })
+})
+</script>
+
+</html>

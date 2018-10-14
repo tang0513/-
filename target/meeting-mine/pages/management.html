@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="UTF-8">
+    <title>会议管理</title>
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+	<script src="../common/public.js"></script>
+    <script src="../jsLibrary/common.js"></script>
+    <script src="../js/controller/managementController.js"></script>
+    <script src="../js/service/managementService.js"></script>
+    <script type="text/javascript" src="../js/controller/baseController.js"></script>
+	
+</head>
+<body ng-app="con" ng-controller="managementController">
+<div class="header">
+    <!-- TODO @lutz 页眉 -->
+    <div class="topBar"> </div>
+    <div class="mainNav">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <span class="logo"><img src="../themes/default/images/logo.png" alt="平台logo" onclick="location.href='index.html'"></span>
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html">首页</a></li>
+                    <li class="active"><a href="management.html">会议管理</a></li>
+                    <li><a href="info_person.html">信息管理</a></li>
+                    <li><a href="data_return.html">数据统计</a></li>
+                    <li><a href="setup_personal.html">系统设置</a></li>
+                </ul>
+                <div class="textWelc">
+                    <span>欢迎，张先生</span><a href="#" class="ml20">退出</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="wrap">
+    <div class="container">
+        <div class="container UCContainer">
+            <div class="row">
+               
+                <div class="col-xs-12">
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">会议列表</div>
+                        <div class="panel-body">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group col-xs-5">
+                                    <label for="" class="control-label col-xs-4">会议编号</label>
+                                    <div class="col-xs-8">
+                                        <input type="text" class="form-control input-sm" id="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group col-xs-5">
+                                    <label for="" class="control-label col-xs-4">会议名称</label>
+                                    <div class="col-xs-8">
+                                        <input type="text" class="form-control input-sm" id="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group col-xs-5">
+                                    <label for="" class="control-label col-xs-4">会议状态</label>
+                                    <div class="col-xs-8">
+                                        <select id="" class="form-control input-sm">
+                                            <option>未发布</option>
+                                            <option>已结束</option>
+                                            <option>进行中</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-xs-5">
+                                    <label for="" class="control-label col-xs-4">会议日期</label>
+                                    <div class="col-xs-8 pr0">
+                                        <input type="text" class="form-control w4 input-sm" id="" placeholder="">
+                                        <span class="w1 text-center">至</span>
+                                        <input type="text" class="form-control w4 input-sm" id="" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group col-xs-2 text-right">
+                                    <button type="submit" class="btn btn-default btn-sm">查询</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Table -->
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th width="60"><input type="checkbox" name="allCheckbox" id="allCheckbox"></th>
+                                    <th width="60">序号</th>
+                                    <th>会议编号</th>
+                                    <th>会议名称</th>
+                                    <th>开始日期</th>
+                                    <th>结束日期</th>
+                                    <th>会议城市</th>
+                                    <th>会议状态</th>
+									<th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="entity in list">
+                                    <td class="text-center"><input ng-click="updateSelect($event,entity.id)" type="checkbox" name="checkbox" id="checkbox"></td>
+                                    <td class="text-center">{{entity.id}}</td>
+                                    <td class="text-center">{{entity.mid}}</td>
+                                    <td><a href="information.html">{{entity.mname}}</a></td>
+                                    <td>{{entity.startTime | date:'yyyy-MM-dd'}}</td>
+                                    <td>{{entity.endTime | date:'yyyy-MM-dd'}}</td>
+                                    <td class="text-center">{{entity.mcity}}</td>
+                                    <td class="text-center">
+                                    	{{status[entity.mstates]}}
+                                    </td>
+									 <td class="text-center">
+									  <a href="#" > 编辑</a>
+									   <a href="#" >删除</a>
+									 </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        
+                        <div class="panel-footer clearfix">
+                            <div class="btn-toolbar pull-left">
+                                <div class="btn-group btn-group-sm">
+                                    <a type="button" id="add" href="management_edit.html" class="btn btn-default"><span class="icon icon-plus-sign"></span> 新增</a>
+            
+                                </div>
+                               
+                                <div class="btn-group btn-group-sm">
+                                    <button type="button" id="export" class="btn btn-default"><i class="icon icon-share-alt"></i> 批量删除</button>
+                                </div>
+                            </div>
+                            <div class="pagination pull-right">
+                            	<tm-pagination conf="paginationConf"></tm-pagination>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p class="text-center copyright">© 2014 版权所有 软通动力</p>
+</div>
+</body>
+</html>

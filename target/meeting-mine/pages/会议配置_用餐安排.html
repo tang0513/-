@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title></title>
+    <!-- 最新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../themes/bootstrap/css/bootstrap.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="../jsLibrary/jquery-1.9.1.min.js"></script>
+
+    <script src="../jsLibrary/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="../jsLibrary/zebra/css/default/zebra_dialog.css">
+    <script src="../jsLibrary/zebra/javascript/zebra_dialog.src.js"></script>
+    <link rel="stylesheet" type="text/css" href="../themes/default/common.css">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!--<script src="../themes/bootstrap/js/bootstrap.min.js"></script>-->
+
+    <!-- TODO @lutz 主页面css文件 -->
+    <link rel="stylesheet" href="../themes/default/main.css">
+
+</head>
+<body>
+<div class="header">
+    <!-- TODO @lutz 页眉 -->
+    <div class="topBar"> </div>
+    <div class="mainNav">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <span class="logo"><img src="../themes/default/images/logo.png" alt="平台logo" onclick="location.href='index.html'"></span>
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html">首页</a></li>
+                    <li class="active"><a href="会议管理.html">会议管理</a></li>
+                    <li><a href="info_person.html">信息管理</a></li>
+                    <li><a href="data_return.html">数据统计</a></li>
+                    <li><a href="setup_personal.html">系统设置</a></li>
+                </ul>
+                <div class="textWelc">
+                    <span>欢迎，张先生</span><a href="#" class="ml20">退出</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="wrap">
+    <div class="container">
+        <div class="container UCContainer">
+            <div class="row">
+                <div class="col-xs-2 UCMenu">
+                    <ul id="sideNav" class="nav nav-pills nav-stacked show-arrows">
+                        <li class="hasSub"><a href="#" class="expand"><i class="glyphicon glyphicon-th-list"></i> 会议管理 </a>
+                            <ul class="nav sub show" style="display: block;">
+                                <li><a href="会议管理.html"><i class=""></i> 会议管理 </a></li>
+                                <li><a href="会议配置.html" class="active"><i class=""></i> 会议配置</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-10">
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">用餐安排</div>
+                        <div class="panel-body">
+                            <div class="col-xs-10 addForm live">
+                                <form class="form-horizontal mb20">
+                                    <div class="form-group">
+                                        <label class="col-xs-2 control-label" for="">用餐名称</label>
+                                        <div class="col-xs-8">
+                                            <input type="text" class="form-control" id="" placeholder="用餐名称">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-xs-2 control-label" for="">时间</label>
+                                        <div class="col-xs-8">
+                                            <input type="text" class="form-control w3" id="" placeholder="开始时间">
+                                            <span class="w1 text-center">至</span>
+                                            <input type="text" class="form-control w3" id="" placeholder="结束时间">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-xs-2 control-label" for="">用餐形式</label>
+                                        <div class="col-xs-8 form-inline">
+                                            <select class="form-control" id="">
+                                                <option>统一安排</option>
+                                                <option>自行安排</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-xs-2 control-label" for="">用餐地点</label>
+                                        <div class="col-xs-8">
+                                            <input type="text" class="form-control" id="" placeholder="用餐地点">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-xs-2 control-label" for="">菜单</label>
+                                        <div class="col-xs-8">
+                                       <div class="menu">
+                                        <span><img src="../themes/default/images/gbjd.jpg"></span>
+                                        <p>宫爆鸡丁</p>
+                                       </div> 
+                                       <div class="menu">
+                                        <span><a href="#" id="add"><img src="../themes/default/images/Menu.jpg"></a></span>
+                                       </div>
+                                                  
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-xs-2 control-label" for="">座位图</label>
+                                        <div class="col-xs-8 liulan">
+                                            <input type="file">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" >
+                        <tr>
+                        <th width="65">
+                        </th>
+                                <th width="150"><input type="text" class="form-control w9" id="" placeholder="添加序号"></th>
+                                <th width="150"><input type="text" class="form-control w9" id="" placeholder="添加房桌号"></th>
+                                <th width="150"><input type="text" class="form-control w9" id="" placeholder="添加桌名"></th>
+                                <th width="230"><input type="text" class="form-control w10" id="" placeholder="添加用餐人员"></th>
+                                <th>
+                                
+                                <div class="clearfix">
+                            <div class="col-xs-8 pl10">
+                                <button type="button" class="btn btn-warning">添加座位</button>
+                                <button type="button" class="btn btn-default">修改</button>
+                            </div>
+                        </div>                       
+                       </th>
+                            </tr>
+                        </table>
+                        </div>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th width="80"><input type="checkbox" name="allCheckbox" id="allCheckbox"></th>
+                                <th width="150">序号</th>
+                                <th width="150">桌号</th>
+                                <th width="150">桌名</th>
+                                <th>用餐人员</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center"><input type="checkbox" name="checkbox"></td>
+                                <td class="text-center">1</td>
+                                <td class=""></td>
+                                <td class=""></td>
+                                <td class=""></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="panel-footer clearfix">
+                          <ul class="pagination pull-right">
+                            <li><a href="#">上一页</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">下一页</a></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix btnCtrl">
+                            <div class="col-xs-8 col-xs-offset-2 pl10">
+                                <button type="button" class="btn btn-warning">保存</button>
+                                <button type="button" class="btn btn-link">返回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p class="text-center copyright">© 2014 版权所有 软通动力</p>
+</div>
+<div class="hidden" id="addBox">
+    <form class="row addForm" role="form">
+        <div class="form-group clearfix">
+            <label class="col-xs-2 control-label" for=""><s>*</s>订菜名称</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" id="" placeholder="">
+            </div>
+        </div>
+        <div class="form-group clearfix">
+                                        <label class="col-xs-2 control-label" for=""><s>*</s>上传图片</label>
+                                        <div class="col-xs-9">
+                                            <input type="file">
+                                        </div>
+                                    </div>
+    </form>
+    <script>
+        $(document).ready(function () {
+            //为添加按钮增加事件
+            $(".leftBtn").click(function () {
+                $(".fName option:selected").each(function (i) {
+                    $(".fType").append("<option>" + this.text + "</option>");
+                }).remove();
+
+            });
+
+            //为删除按钮增加事件
+            $(".rightBtn").click(function () {
+                $(".fType option:selected").each(function (i) {
+                    $(".fName").append("<option>" + this.text + "</option>");
+                }).remove();
+
+            });
+        });
+    </script>
+</div>
+<script>
+    $(function(){
+        $("#add").bind("click",function(e){
+            e.preventDefault();
+            var zDialog= new $.Zebra_Dialog('', {
+                'source': {'inline': $('#addBox').html()},
+                'width': 550,
+                'type':false,
+                'overlay_close':false,
+                'overlay_opacity':0.75,
+                'title':  '添加菜单',
+                'buttons':  [
+                    {caption: '保存',claName:'primary', callback: function() { }},
+                    {caption: '返回',claName:'default', callback: function() { }}
+                ]
+
+            });
+        })
+    })
+</script>
+</body>
+</html>

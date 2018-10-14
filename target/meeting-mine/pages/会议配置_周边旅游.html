@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title></title>
+    <!-- 最新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../themes/bootstrap/css/bootstrap.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="../jsLibrary/jquery-1.9.1.min.js"></script>
+
+    <script src="../jsLibrary/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="../jsLibrary/zebra/css/default/zebra_dialog.css">
+    <script src="../jsLibrary/zebra/javascript/zebra_dialog.src.js"></script>
+    <link rel="stylesheet" type="text/css" href="../themes/default/common.css">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!--<script src="../themes/bootstrap/js/bootstrap.min.js"></script>-->
+
+    <!-- TODO @lutz 主页面css文件 -->
+    <link rel="stylesheet" href="../themes/default/main.css">
+
+</head>
+<body>
+<div class="header">
+    <!-- TODO @lutz 页眉 -->
+    <div class="topBar"> </div>
+    <div class="mainNav">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <span class="logo"><img src="../themes/default/images/logo.png" alt="平台logo" onclick="location.href='index.html'"></span>
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html">首页</a></li>
+                    <li class="active"><a href="会议管理.html">会议管理</a></li>
+                    <li><a href="info_person.html">信息管理</a></li>
+                    <li><a href="data_return.html">数据统计</a></li>
+                    <li><a href="setup_personal.html">系统设置</a></li>
+                </ul>
+                <div class="textWelc">
+                    <span>欢迎，张先生</span><a href="#" class="ml20">退出</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="wrap">
+    <div class="container">
+        <div class="container UCContainer">
+            <div class="row">
+                <div class="col-xs-2 UCMenu">
+                    <ul id="sideNav" class="nav nav-pills nav-stacked show-arrows">
+                        <li class="hasSub"><a href="#" class="expand"><i class="glyphicon glyphicon-th-list"></i> 会议管理 </a>
+                            <ul class="nav sub show" style="display: block;">
+                                <li><a href="会议管理.html"><i class=""></i> 会议管理 </a></li>
+                                <li><a href="会议配置.html" class="active"><i class=""></i> 会议配置</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-10">
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">周边旅游</div>
+                        <div class="panel-body">
+                            <div class="col-xs-10 addForm">
+                                <form class="form-horizontal mb20">
+                                    <div class="form-group">
+                                        <label class="col-xs-2 control-label" for="">旅游日数</label>
+                                        <div class="col-xs-8 form-inline">
+                                            <select class="form-control" id="">
+                                                <option>一日游</option>
+                                                <option>二日游</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-xs-2 control-label" for="">方案1图片</label>
+                                        <div class="col-xs-8 liulan">
+                                            <input type="file">
+                                            <p class="help-inline text-muted">支持JPG、PNG、BMP格式的图片，大小为263*108像素，不大于20k</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-xs-2 control-label" for=""><s>*</s>方案1</label>
+                                        <div class="col-xs-8">
+                                            <textarea class="form-control" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-8 col-xs-offset-2 pl10">
+                                            <button type="button" class="btn btn-link">添加方案</button>
+                                            <p class="help-inline text-muted">（最多添加四个方案）</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-8 col-xs-offset-2 pl10">
+                                            <button type="button" class="btn btn-warning">保存</button>
+                                            <button type="button" class="btn btn-link">返回</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p class="text-center copyright">© 2014 版权所有 软通动力</p>
+</div>
+<div class="hidden" id="addBox">
+    <form class="row addForm" role="form">
+        <div class="form-group clearfix">
+            <label class="col-xs-2 control-label" for=""><s>*</s>房间号</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" id="" placeholder="">
+            </div>
+        </div>
+        <div class="form-group clearfix">
+            <label class="col-xs-2 control-label" for="">待选人员</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" id="" placeholder="">
+            </div>
+            <div class="col-xs-2"><button class="btn btn-default">搜索</button></div>
+        </div>
+        <div class="form-group col-xs-5">
+            <label class="control-label">人员名单</label>
+            <select class="fName form-control" multiple="multiple" style="width:235px; height:180px;">
+                <option value="1">赵</option>
+                <option value="2">钱</option>
+                <option value="3">孙</option>
+                <option value="4">李</option>
+                <option value="5">周</option>
+            </select>
+        </div>
+        <div class="form-group col-xs-2 text-center">
+            <label class="control-label">&nbsp;</label>
+            <input class="btn btn-default btn-block btn-sm leftBtn" type="button" value=">>"/>
+            <br>
+            <br>
+            <input class="btn btn-default btn-block btn-sm rightBtn" type="button" value="<<"/>
+        </div>
+        <div class="form-group col-xs-5">
+            <label class="control-label">待选人员</label>
+            <select class="fType form-control" multiple="multiple" style="width:235px; height:180px;"> </select>
+        </div>
+    </form>
+    <script>
+        $(document).ready(function () {
+            //为添加按钮增加事件
+            $(".leftBtn").click(function () {
+                $(".fName option:selected").each(function (i) {
+                    $(".fType").append("<option>" + this.text + "</option>");
+                }).remove();
+
+            });
+
+            //为删除按钮增加事件
+            $(".rightBtn").click(function () {
+                $(".fType option:selected").each(function (i) {
+                    $(".fName").append("<option>" + this.text + "</option>");
+                }).remove();
+
+            });
+        });
+    </script>
+</div>
+<script>
+    $(function(){
+        $("#add").bind("click",function(e){
+            e.preventDefault();
+            var zDialog= new $.Zebra_Dialog('', {
+                'source': {'inline': $('#addBox').html()},
+                'width': 650,
+                'type':false,
+                'overlay_close':false,
+                'overlay_opacity':0.75,
+                'title':  '添加座位',
+                'buttons':  [
+                    {caption: '保存',claName:'primary', callback: function() { }},
+                    {caption: '返回',claName:'default', callback: function() { }}
+                ]
+
+            });
+        })
+    })
+</script>
+</body>
+</html>
